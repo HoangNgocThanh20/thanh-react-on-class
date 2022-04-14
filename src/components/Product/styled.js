@@ -26,4 +26,15 @@ export const ProductWrapper = styled(Box)({
   th: {
     fontWeight: "600",
   },
+
+  ".fieldWrapper": {
+    display: "flex",
+    alignItems: "center",
+    fontSize: "20px",
+    marginBottom: "20px",
+
+    ".titleField": {
+      marginRight: "20px",
+    },
+  },
 });

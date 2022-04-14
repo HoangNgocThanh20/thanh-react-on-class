@@ -1,6 +1,6 @@
-import { Box, styled } from "@mui/system";
+import { styled } from "@mui/system";
 
-export const ProductAddWrapper = styled(Box)({
+export const ProductAddWrapper = styled("form")({
   backgroundColor: "#ffff",
   height: "100%",
   margin: "40px",
@@ -17,4 +17,9 @@ export const ProductAddWrapper = styled(Box)({
       width: "200px",
     },
   },
+
+  'p.Mui-error': {
+    position: 'absolute',
+    bottom: '-20px'
+  }
 });

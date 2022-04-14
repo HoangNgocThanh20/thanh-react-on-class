@@ -52,7 +52,7 @@ const DkAlertComfirm = (props) => {
             {textNO}
           </Button>
 
-          <Button variant="contained" onClick={handleOnComfirm} color="warning">
+          <Button variant="contained" onClick={handleOnComfirm} color="error">
             {textYES}
           </Button>
         </BoxButton>
