@@ -1,64 +1,29 @@
-import './App.css';
-import { useEffect } from 'react';
-import getData from './api/apiTestData';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-} from "react-router-dom";
-import Product from './components/Product';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Product from "./components/Product";
+import { ProductAdd } from "./components/ProductAdd";
 
 function App() {
-  // useEffect(() => {
-  //   (async function() {
-  //     const post = await getData.getProducts()
-  //     console.log(post)
-  //   })()
-  // },[])
-  
   return (
     <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/users">Users</Link>
-          </li>
-        </ul>
-      </nav>  
-    </div>
-
-    <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/users" element={<Users />} />
+      <Routes>
         <Route path="/" element={<Product />} />
+        <Route path="/product/add" element={<ProductAdd />} />
+
         <Route path="*" element={<NotFound />} />
-    </Routes>
-  </Router>
+      </Routes>
+    </Router>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
-
 function NotFound() {
-  return <h2>not found</h2>;
+  return (
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div>
+        <p>Oppps !!</p>
+        <h2>This Page does not exist</h2>
+      </div>
+    </div>
+  );
 }
 
 export default App;

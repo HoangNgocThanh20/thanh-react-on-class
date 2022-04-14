@@ -1,12 +1,17 @@
-import apiClient from './apiService';
+import apiClient from "./apiService";
 
 const getData = {
-    getProducts() {
-        return apiClient.request({
-            method: 'GET',
-            url: 'products',
-          });
-    },
-}
+  getProducts() {
+    return apiClient.get("products");
+  },
 
-export default getData
+  addProduct(data) {
+    return apiClient.post("products", data);
+  },
+
+  deleteProduct(id) {
+    return apiClient.delete(`products/${id}`);
+  },
+};
+
+export default getData;
